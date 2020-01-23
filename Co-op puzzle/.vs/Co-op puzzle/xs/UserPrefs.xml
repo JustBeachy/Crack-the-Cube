@@ -1,0 +1,26 @@
+﻿<Properties StartupConfiguration="{1EF91FB7-EB9D-540A-854B-707E96FB2560}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/ColorTwister.cs">
+    <Files>
+      <File FileName="Assets/PuzzleBlock.cs" Line="21" Column="10" />
+      <File FileName="Assets/ColorTwister.cs" Line="37" Column="43" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Co-op puzzle" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="ColorTwister.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="6dd143fc-b4f7-47d1-a874-d5b8093533c9" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
