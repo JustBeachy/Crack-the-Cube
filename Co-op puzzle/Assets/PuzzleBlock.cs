@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Photon.Pun;
 using System.IO;
 
 public class PuzzleBlock : MonoBehaviour
@@ -9,7 +8,6 @@ public class PuzzleBlock : MonoBehaviour
     float mousex;
     float mousey;
     public GameObject[] Modules;
-    public GameObject TestMaster;
     Random rnd = new Random();
     // Start is called before the first frame update
     void Start()
@@ -30,20 +28,7 @@ public class PuzzleBlock : MonoBehaviour
         Instantiate(Modules[4], Vector3.zero, Quaternion.Euler(new Vector3(0, 0, 90))).transform.parent = gameObject.transform; 
         Instantiate(Modules[5], Vector3.zero, Quaternion.Euler(new Vector3(0, 0, -90))).transform.parent = gameObject.transform;
 
-        if (PhotonNetwork.IsMasterClient)
-        {
-           
-            var p1= PhotonNetwork.Instantiate(Path.Combine("Prefabs", "ColorTwisterP1"), transform.position, Quaternion.identity);
-            p1.transform.parent = gameObject.transform;
-
-           // PhotonNetwork.InstantiateSceneObject(Path.Combine("Prefabs", "ColorTwisterMaster"), transform.position, Quaternion.identity);
-        }
-        else
-        {
-
-            var p2 = PhotonNetwork.Instantiate(Path.Combine("Prefabs", "ColorTwisterP2"), transform.position, Quaternion.identity);
-            p2.transform.parent = gameObject.transform;
-        }
+  
 
 
     }
@@ -51,23 +36,23 @@ public class PuzzleBlock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        object[] disable = GameObject.FindGameObjectsWithTag("Puzzle"); //hide objects not owned by the user
-        foreach (GameObject g in disable)
-        {
-            if(!g.GetComponent<PhotonView>().IsMine)
-            g.SetActive(false);
-        }
+     
     }
 
     private void OnMouseDown()
     {
-        mousex = Input.mousePosition.x;
-        mousey = Input.mousePosition.y;
+       
     }
 
     private void OnMouseDrag()
     {
-        transform.Rotate(new Vector3( Input.mousePosition.y-mousey,mousex - Input.mousePosition.x, 0));
-        OnMouseDown();
+        //transform.Rotate(new Vector3( Input.mousePosition.y-mousey,mousex - Input.mousePosition.x, 0));
+       // OnMouseDown();
+
+        float rotX = Input.GetAxis("Mouse X") * 400 * Time.deltaTime;
+        float rotY = Input.GetAxis("Mouse Y") * 400 * Time.deltaTime;
+
+        transform.Rotate(Vector3.up, -rotX, Space.World); 
+        transform.Rotate(Vector3.right, rotY,Space.World);
     }
 }

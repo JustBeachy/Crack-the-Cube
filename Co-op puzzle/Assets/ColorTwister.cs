@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using Photon.Pun;
 
 
-public class ColorTwister : MonoBehaviourPunCallbacks
+
+public class ColorTwister : MonoBehaviour
 {
     public TextMeshPro[] colorTexts;
     public Color[] colors;
@@ -30,11 +30,10 @@ public class ColorTwister : MonoBehaviourPunCallbacks
 
         if (Input.GetKeyDown(KeyCode.C))
         {
-            PhotonView photonView = PhotonView.Get(this);
-            photonView.RPC("Colorize", RpcTarget.All);
+           
         }//remove after testing 
     }
-    [PunRPC]
+   
     void Colorize()
     {
         try
