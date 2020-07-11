@@ -9,7 +9,6 @@ public class ColorTwister : MonoBehaviour
 {
     public TextMeshPro[] colorTexts;
     public Color[] colors;
-    public string [] Textnames;
     public List<int> combo;
     public List<int> userCombo;
     public Material[] Materials;
@@ -18,6 +17,13 @@ public class ColorTwister : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        combo.Add(1);
+        combo.Add(2);
+        combo.Add(3);
+        combo.Add(0);
+        combo.Add(4);
+        combo.Add(2);
+
         Colorize();
         
     }
@@ -36,25 +42,19 @@ public class ColorTwister : MonoBehaviour
    
     void Colorize()
     {
-        try
-        {
-            for (int x = 0; x < colorTexts.Length; x++)
-            {
+        
+          
 
-                int ranNum = Random.Range(0, 5);
-                colorTexts[x].text = Textnames[ranNum]; //random color name
-                int ranNum2 = Random.Range(0, 5);
-                while (ranNum2 == ranNum) //make sure no duplicate color/text
-                    ranNum2 = Random.Range(0, 5);
-                colorTexts[x].faceColor = colors[ranNum2];
+                colorTexts[0].faceColor = colors[1];
+                colorTexts[1].faceColor = colors[2];
+                colorTexts[2].faceColor = colors[3];
+                colorTexts[3].faceColor = colors[0];
+                colorTexts[4].faceColor = colors[4];
+                colorTexts[5].faceColor = colors[2];
 
-                combo.Add(ranNum2);//set combo
-            }
-        }
-        catch
-        {
-           
-        }
+
+                
+       
     }
 
 }

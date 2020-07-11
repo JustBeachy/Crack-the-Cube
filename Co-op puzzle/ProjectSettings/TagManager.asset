@@ -6,6 +6,11 @@ TagManager:
   tags:
   - Puzzle
   - ColorTwisterMaster
+  - ShapeSlot
+  - Face
+  - LightCounter
+  - LetterTwistCounter
+  - Goal
   layers:
   - Default
   - TransparentFX

@@ -29,30 +29,31 @@ public class PuzzleBlock : MonoBehaviour
         Instantiate(Modules[5], Vector3.zero, Quaternion.Euler(new Vector3(0, 0, -90))).transform.parent = gameObject.transform;
 
   
-
+       
 
     }
 
     // Update is called once per frame
     void Update()
     {
-     
+
+        if (Input.GetMouseButton(0))
+        {
+            float rotX = Input.GetAxis("Mouse X") * 400 * Time.deltaTime;
+            float rotY = Input.GetAxis("Mouse Y") * 400 * Time.deltaTime;
+
+            transform.Rotate(Vector3.up, -rotX, Space.World);
+            transform.Rotate(Vector3.right, rotY, Space.World);
+        }
+
     }
 
-    private void OnMouseDown()
-    {
-       
-    }
 
     private void OnMouseDrag()
     {
         //transform.Rotate(new Vector3( Input.mousePosition.y-mousey,mousex - Input.mousePosition.x, 0));
        // OnMouseDown();
 
-        float rotX = Input.GetAxis("Mouse X") * 400 * Time.deltaTime;
-        float rotY = Input.GetAxis("Mouse Y") * 400 * Time.deltaTime;
-
-        transform.Rotate(Vector3.up, -rotX, Space.World); 
-        transform.Rotate(Vector3.right, rotY,Space.World);
+   
     }
 }
