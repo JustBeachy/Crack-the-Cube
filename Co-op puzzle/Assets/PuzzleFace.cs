@@ -9,6 +9,7 @@ public class PuzzleFace : MonoBehaviour
     public GameObject locked;
     public bool isFinal = false;
     public bool isComplete = false;
+    public AudioClip soundOnComplete;
 
     // Start is called before the first frame update
     void Start()
@@ -36,8 +37,12 @@ public class PuzzleFace : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (CheckAllDone())
-            UnlockFinal();
+        if (Input.GetMouseButtonUp(0))
+        {
+            if (CheckAllDone())
+                UnlockFinal();
+        }
+
     }
 
     public void Complete()
@@ -45,8 +50,11 @@ public class PuzzleFace : MonoBehaviour
         completeLight.GetComponent<MeshRenderer>().material = greenLight;
         isComplete = true;
 
-        if (CheckAllDone())
-            UnlockFinal();
+        if (soundOnComplete != null)
+        {
+            GameObject.FindGameObjectWithTag("AudioMaster").GetComponent<AudioSource>().clip = soundOnComplete;
+            GameObject.FindGameObjectWithTag("AudioMaster").GetComponent<AudioSource>().Play();
+        }
     }
 
     public void UnlockFinal()

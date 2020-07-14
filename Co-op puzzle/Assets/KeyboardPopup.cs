@@ -7,6 +7,7 @@ public class KeyboardPopup : MonoBehaviour
 {
     TouchScreenKeyboard keyboard;
     string check;
+    public GameObject winScreen;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,19 +17,18 @@ public class KeyboardPopup : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(keyboard.status==TouchScreenKeyboard.Status.Done)
+        {
+            check = keyboard.text;
+            if (check.ToLower() == "complete")
+                Instantiate(winScreen, GameObject.FindGameObjectWithTag("Canvas").transform);
+        }
     }
 
     private void OnMouseUpAsButton()
     {
         keyboard = TouchScreenKeyboard.Open("");
 
-        if (keyboard != null)
-        {
-            check = keyboard.text;
-            if (check.ToLower() == "complete")
-                SceneManager.LoadScene(0);
-
-        }
+        
     }
 }

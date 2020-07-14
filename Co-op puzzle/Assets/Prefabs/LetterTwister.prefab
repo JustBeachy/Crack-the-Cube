@@ -302,6 +302,8 @@ MonoBehaviour:
   greenLight: {fileID: 2100000, guid: 1ac275dc452cd9543a481a8469ca2e6f, type: 2}
   locked: {fileID: 0}
   isFinal: 0
+  isComplete: 0
+  soundOnComplete: {fileID: 8300000, guid: f1f5bca5b0369b84298b6c388ebbcd10, type: 3}
 --- !u!1 &1411232605234015205
 GameObject:
   m_ObjectHideFlags: 0
@@ -519,6 +521,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clickDepth: 0.08
+  soundWhenPressed: {fileID: 8300000, guid: 5d7c8d714223c0e4e849ac0a72b96908, type: 3}
 --- !u!114 &241840537543333048
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1409,6 +1412,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clickDepth: 0.08
+  soundWhenPressed: {fileID: 8300000, guid: 5d7c8d714223c0e4e849ac0a72b96908, type: 3}
 --- !u!114 &6635180482015410086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1530,6 +1534,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clickDepth: 0.08
+  soundWhenPressed: {fileID: 8300000, guid: 5d7c8d714223c0e4e849ac0a72b96908, type: 3}
 --- !u!114 &4118073204335115466
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -11,6 +11,8 @@ TagManager:
   - LightCounter
   - LetterTwistCounter
   - Goal
+  - Canvas
+  - AudioMaster
   layers:
   - Default
   - TransparentFX

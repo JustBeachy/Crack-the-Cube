@@ -96,6 +96,10 @@ MonoBehaviour:
   p1: {fileID: 3822852885449320202}
   p2: {fileID: 5053308988255237622}
   greenLight: {fileID: 2100000, guid: 1ac275dc452cd9543a481a8469ca2e6f, type: 2}
+  locked: {fileID: 0}
+  isFinal: 0
+  isComplete: 0
+  soundOnComplete: {fileID: 8300000, guid: f1f5bca5b0369b84298b6c388ebbcd10, type: 3}
 --- !u!1 &1411232605234015205
 GameObject:
   m_ObjectHideFlags: 0

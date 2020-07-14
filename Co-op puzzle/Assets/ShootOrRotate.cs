@@ -21,7 +21,7 @@ public class ShootOrRotate : MonoBehaviour
 
     private void OnMouseDrag()
     {
-        if (isRotateButton)
+        if (isRotateButton && !Ball.GetComponent<Ball>().move)
             Launcher.transform.Rotate(Vector3.forward, 90 * Time.deltaTime, Space.Self);
         else
             Ball.GetComponent<Ball>().Fire();

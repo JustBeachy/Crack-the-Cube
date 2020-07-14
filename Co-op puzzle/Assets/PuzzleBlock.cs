@@ -36,16 +36,27 @@ public class PuzzleBlock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if (Input.GetMouseButton(0))
+        /*
+        if (Input.GetMouseButton(0))//for pc testing
         {
             float rotX = Input.GetAxis("Mouse X") * 400 * Time.deltaTime;
             float rotY = Input.GetAxis("Mouse Y") * 400 * Time.deltaTime;
 
             transform.Rotate(Vector3.up, -rotX, Space.World);
             transform.Rotate(Vector3.right, rotY, Space.World);
-        }
+        } 
+        */
+        
+        if (Input.GetTouch(0).phase == TouchPhase.Moved)
+        {
+            
+            float rotX = Input.GetTouch(0).deltaPosition.x * 10 * Time.deltaTime;
+            float rotY = Input.GetTouch(0).deltaPosition.y * 10 * Time.deltaTime;
 
+            transform.Rotate(Vector3.up, -rotX, Space.World);
+            transform.Rotate(Vector3.right, rotY, Space.World);
+        }
+        
     }
 
 

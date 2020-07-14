@@ -27,6 +27,7 @@ public class Ball : MonoBehaviour
 
         if(transform.localPosition.x>2|| transform.localPosition.x <-2 || transform.localPosition.y > 2 || transform.localPosition.y < -2)
         {
+            transform.localScale = new Vector3(1, 1, 1);
             move = false;
             transform.parent = parent;
             transform.localPosition = startPos;
