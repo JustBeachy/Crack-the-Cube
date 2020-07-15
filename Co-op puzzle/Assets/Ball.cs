@@ -25,12 +25,13 @@ public class Ball : MonoBehaviour
             transform.localPosition += transform.right * Time.deltaTime * 5;
         }
 
-        if(transform.localPosition.x>2|| transform.localPosition.x <-2 || transform.localPosition.y > 2 || transform.localPosition.y < -2)
+        if(transform.localPosition.x>2.5|| transform.localPosition.x <-2.5 || transform.localPosition.y > 2.5 || transform.localPosition.y < -2.5)
         {
             transform.localScale = new Vector3(1, 1, 1);
             move = false;
             transform.parent = parent;
             transform.localPosition = startPos;
+            transform.localRotation= new Quaternion(0, 0, 0, 0);
         }
     }
 

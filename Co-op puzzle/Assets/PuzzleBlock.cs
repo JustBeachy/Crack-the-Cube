@@ -50,8 +50,8 @@ public class PuzzleBlock : MonoBehaviour
         if (Input.GetTouch(0).phase == TouchPhase.Moved)
         {
             
-            float rotX = Input.GetTouch(0).deltaPosition.x * 10 * Time.deltaTime;
-            float rotY = Input.GetTouch(0).deltaPosition.y * 10 * Time.deltaTime;
+            float rotX = Input.GetTouch(0).deltaPosition.x * 5 * Time.deltaTime;
+            float rotY = Input.GetTouch(0).deltaPosition.y * 5 * Time.deltaTime;
 
             transform.Rotate(Vector3.up, -rotX, Space.World);
             transform.Rotate(Vector3.right, rotY, Space.World);
